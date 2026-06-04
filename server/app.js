@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://leadcrm-qt9x.onrender.com",
+      "https://lead-crm-kappa-five.vercel.app",
     ],
     credentials: true,
   })
