@@ -13,7 +13,10 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173","https://leadcrm-qt9x.onrender.com",
+    origin: [
+      "http://localhost:5173",
+      "https://leadcrm-qt9x.onrender.com",
+    ],
     credentials: true,
   })
 );
