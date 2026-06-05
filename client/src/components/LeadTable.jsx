@@ -1,17 +1,25 @@
 const getInitials = (name = "") =>
-  name.split(" ").map((n) => n[0]).slice(0, 2).join("").toUpperCase();
+  name
+    .split(" ")
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
 const AVATAR_STYLES = {
-  New:       "bg-[#EEF4FF] text-[#3B6FCC]",
+  New: "bg-[#EEF4FF] text-[#3B6FCC]",
   Contacted: "bg-[#FEF9EE] text-[#A16207]",
   Qualified: "bg-[#EEFAF2] text-[#2E7D52]",
-  Lost:      "bg-[#FEF2F2] text-[#C0392B]",
+  Lost: "bg-[#FEF2F2] text-[#C0392B]",
 };
 
 const LeadTable = ({ leads, onEdit, onDelete, updateLeadStatus }) => {
   return (
     <div className="bg-white border border-[#E2E2DE] rounded-xl overflow-hidden">
-      <table className="w-full border-collapse" style={{ tableLayout: "fixed" }}>
+      <table
+        className="w-full border-collapse"
+        style={{ tableLayout: "fixed" }}
+      >
         <colgroup>
           <col style={{ width: "22%" }} />
           <col style={{ width: "26%" }} />
@@ -36,7 +44,10 @@ const LeadTable = ({ leads, onEdit, onDelete, updateLeadStatus }) => {
         <tbody>
           {!leads?.length && (
             <tr>
-              <td colSpan={5} className="py-14 text-center text-[13px] text-[#bbb]">
+              <td
+                colSpan={5}
+                className="py-14 text-center text-[13px] text-[#bbb]"
+              >
                 No leads found
               </td>
             </tr>
@@ -81,7 +92,9 @@ const LeadTable = ({ leads, onEdit, onDelete, updateLeadStatus }) => {
                   className="w-full border border-[#E2E2DE] rounded-lg px-2.5 py-1.5 text-[12px] text-[#1a1a1a] bg-white outline-none cursor-pointer hover:border-[#bbb] transition-colors"
                 >
                   {["New", "Contacted", "Qualified", "Lost"].map((s) => (
-                    <option key={s} value={s}>{s}</option>
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
                   ))}
                 </select>
               </td>

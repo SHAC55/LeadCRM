@@ -17,7 +17,7 @@ const Register = () => {
     setServerError("");
     try {
       await api.post("/auth/register", formData);
-      navigate("/login");
+      navigate("/dashboard");
     } catch (error) {
       setServerError(
         error?.response?.data?.message || "Something went wrong. Try again."
